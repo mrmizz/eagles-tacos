@@ -19,7 +19,7 @@ view =
                 [ Html.img
                     [ src "images/logo2.jpg"
                     , alt "Eagles Tacos"
-                    , width 200
+                    , width 250
                     ]
                     []
                 ]
