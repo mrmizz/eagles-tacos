@@ -4,11 +4,11 @@ module Main exposing (main)
 
 import Browser
 import Html exposing (Html)
-import Html.Attributes exposing (class, src, width)
 import Model.Model as Model exposing (Model)
 import Model.State exposing (State(..))
 import Msg.Msg exposing (Msg(..))
 import Sub.Sub as Sub
+import View.Gallery.Gallery
 
 
 main : Program () Model Msg
@@ -45,21 +45,4 @@ view : Model -> Html Msg
 view model =
     case model.state of
         LandingPage ->
-            Html.section
-                [ class "hero is-fullheight"
-                ]
-                [ Html.div
-                    [ class "hero-body has-bg-color1"
-                    ]
-                    [ Html.div
-                        [ class "container is-fluid"
-                        ]
-                        [ Html.img
-                            [ class "image"
-                            , src "images/IMG_4567.jpeg"
-                            , width 2500
-                            ]
-                            []
-                        ]
-                    ]
-                ]
+            View.Gallery.Gallery.view

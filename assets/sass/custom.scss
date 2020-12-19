@@ -11,5 +11,17 @@ $family-secondary: "Rubik", BlinkMacSystemFont, -apple-system, "Helvetica", "Ari
   background-size: cover;
 }
 
+.navbar-margin {
+  margin-bottom: 100px;
+}
+
+
+// navbar
+$navbar-tab-hover-border-bottom-color: #720000;
+$navbar-item-img-max-height: 5.00rem;
+$navbar-height: 5.00rem;
+// colors
+$red: #720000;
+
 // bulma import
 @import "node_modules/bulma/bulma";
