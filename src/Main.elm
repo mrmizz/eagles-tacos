@@ -4,11 +4,9 @@ module Main exposing (main)
 
 import Browser
 import Html exposing (Html)
-import Html.Attributes exposing (class)
+import Html.Attributes exposing (class, src, width)
 import Model.Model as Model exposing (Model)
-import Model.Orientation as Orientation
 import Model.State exposing (State(..))
-import Model.WindowSize exposing (WindowSize)
 import Msg.Msg exposing (Msg(..))
 import Sub.Sub as Sub
 
@@ -48,58 +46,20 @@ view model =
     case model.state of
         LandingPage ->
             Html.section
-                [ class "hero has-background-grey-lighter is-fullheight"
+                [ class "hero is-fullheight"
                 ]
                 [ Html.div
-                    [ class "hero-body has-text-centered is-family-secondary"
+                    [ class "hero-body has-bg-color1"
                     ]
                     [ Html.div
                         [ class "container is-fluid"
                         ]
-                        [ Html.div
-                            [ class "columns is-mobile is-centered is-multiline"
+                        [ Html.img
+                            [ class "image"
+                            , src "images/IMG_4567.jpeg"
+                            , width 2500
                             ]
-                            [ Html.div
-                                [ class "column is-4"
-                                ]
-                                [ Html.text ("Width: " ++ viewWindowDimension model .width)
-                                ]
-                            , Html.div
-                                [ class "column is-4"
-                                ]
-                                [ Html.text ("Height: " ++ viewWindowDimension model .height)
-                                ]
-                            , Html.div
-                                [ class "column is-8-mobile"
-                                ]
-                                [ Html.text ("Orientation: " ++ viewOrientation model)
-                                ]
-                            ]
+                            []
                         ]
                     ]
-                , Html.div
-                    [ class "hero-foot has-text-centered"
-                    ]
-                    [ Html.text "footer"
-                    ]
                 ]
-
-
-viewWindowDimension : Model -> (WindowSize -> Int) -> String
-viewWindowDimension model f =
-    case Maybe.map f model.windowSize of
-        Just int ->
-            String.fromInt int
-
-        Nothing ->
-            "Could not detect val"
-
-
-viewOrientation : Model -> String
-viewOrientation model =
-    case model.windowSize of
-        Just ws ->
-            Orientation.toString ws.orientation
-
-        Nothing ->
-            "Could not detect val"

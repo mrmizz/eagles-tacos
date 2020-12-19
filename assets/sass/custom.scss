@@ -5,5 +5,11 @@
 $family-sans-serif: "Karla", BlinkMacSystemFont, -apple-system, "Helvetica", "Arial", sans-serif;
 $family-secondary: "Rubik", BlinkMacSystemFont, -apple-system, "Helvetica", "Arial", sans-serif;
 
+// background image
+.has-bg-color1 {
+  background-color: #ffe684;
+  background-size: cover;
+}
+
 // bulma import
 @import "node_modules/bulma/bulma";
