@@ -7,7 +7,7 @@ import Msg.Msg exposing (Msg)
 view : Html Msg
 view =
     Html.nav
-        [ class "navbar is-fixed-top navbar-margin"
+        [ class "navbar is-fixed-top navbar-margin has-border-shadow"
         ]
         [ Html.div
             [ class "navbar-brand has-bg-color1"
