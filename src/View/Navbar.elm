@@ -3,14 +3,25 @@ module View.Navbar exposing (view)
 import Html exposing (Html)
 import Html.Attributes exposing (alt, class, src, width)
 import Html.Events exposing (onClick)
+import Model.Model exposing (IsOpen(..))
 import Model.State exposing (State(..))
 import Msg.Msg exposing (Msg(..))
 
 
-view : Html Msg
-view =
+view : IsOpen -> Html Msg
+view isOpen =
+    let
+        isActive : String
+        isActive =
+            case isOpen of
+                Yes ->
+                    " is-active"
+
+                No ->
+                    ""
+    in
     Html.nav
-        [ class "navbar is-fixed-top navbar-margin has-border-shadow"
+        [ class ("navbar is-fixed-top navbar-margin has-border-shadow" ++ isActive)
         ]
         [ Html.div
             [ class "navbar-brand has-bg-color1"
@@ -27,7 +38,8 @@ view =
                     []
                 ]
             , Html.a
-                [ class "navbar-burger"
+                [ class ("navbar-burger" ++ isActive)
+                , onClick ClickedBurger
                 ]
                 [ Html.span [] []
                 , Html.span [] []
@@ -35,7 +47,7 @@ view =
                 ]
             ]
         , Html.div
-            [ class "navbar-menu is-size-3 has-bg-color1"
+            [ class ("navbar-menu is-size-3 has-bg-color1" ++ isActive)
             ]
             [ Html.div
                 [ class "navbar-start"

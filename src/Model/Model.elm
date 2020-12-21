@@ -1,4 +1,4 @@
-module Model.Model exposing (Model, init)
+module Model.Model exposing (IsOpen(..), Model, init)
 
 import Browser.Dom
 import Model.State exposing (State(..))
@@ -10,7 +10,13 @@ import Task
 type alias Model =
     { state : State
     , windowSize : Maybe WindowSize
+    , navbar : IsOpen
     }
+
+
+type IsOpen
+    = Yes
+    | No
 
 
 init : ( Model, Cmd Msg )
@@ -33,6 +39,7 @@ init =
     in
     ( { state = Gallery
       , windowSize = Nothing
+      , navbar = No
       }
     , Task.attempt handle Browser.Dom.getViewport
     )

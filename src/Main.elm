@@ -4,7 +4,7 @@ module Main exposing (main)
 
 import Browser
 import Html exposing (Html)
-import Model.Model as Model exposing (Model)
+import Model.Model as Model exposing (IsOpen(..), Model)
 import Model.State exposing (State(..))
 import Msg.Msg exposing (Msg(..))
 import Sub.Sub as Sub
@@ -40,7 +40,19 @@ update msg model =
             ( { model | windowSize = windowSize }, Cmd.none )
 
         ClickedTab state ->
-            ( { model | state = state }, Cmd.none )
+            ( { model | state = state, navbar = No }, Cmd.none )
+
+        ClickedBurger ->
+            let
+                new =
+                    case model.navbar of
+                        Yes ->
+                            No
+
+                        No ->
+                            Yes
+            in
+            ( { model | navbar = new }, Cmd.none )
 
 
 
@@ -51,13 +63,13 @@ view : Model -> Html Msg
 view model =
     case model.state of
         Menu ->
-            View.Menu.Menu.view
+            View.Menu.Menu.view model
 
         Hours ->
-            View.Hours.Hours.view
+            View.Hours.Hours.view model
 
         Gallery ->
-            View.Gallery.Gallery.view
+            View.Gallery.Gallery.view model
 
         Order ->
-            View.Order.Order.view
+            View.Order.Order.view model

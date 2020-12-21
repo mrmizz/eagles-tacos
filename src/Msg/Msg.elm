@@ -7,3 +7,4 @@ import Model.WindowSize exposing (WindowSize)
 type Msg
     = NewWindowSize (Maybe WindowSize)
     | ClickedTab State
+    | ClickedBurger

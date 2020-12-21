@@ -2,15 +2,16 @@ module View.Gallery.Gallery exposing (view)
 
 import Html exposing (Html)
 import Html.Attributes exposing (class, src, width)
+import Model.Model exposing (Model)
 import Msg.Msg exposing (Msg)
 import View.Navbar
 
 
-view : Html Msg
-view =
+view : Model -> Html Msg
+view model =
     Html.div
         []
-        [ View.Navbar.view
+        [ View.Navbar.view model.navbar
         , body
         ]
 
