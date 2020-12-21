@@ -31,7 +31,7 @@ init =
                 Err _ ->
                     NewWindowSize Nothing
     in
-    ( { state = LandingPage
+    ( { state = Gallery
       , windowSize = Nothing
       }
     , Task.attempt handle Browser.Dom.getViewport

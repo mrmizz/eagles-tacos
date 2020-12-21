@@ -2,7 +2,9 @@ module View.Navbar exposing (view)
 
 import Html exposing (Html)
 import Html.Attributes exposing (alt, class, src, width)
-import Msg.Msg exposing (Msg)
+import Html.Events exposing (onClick)
+import Model.State exposing (State(..))
+import Msg.Msg exposing (Msg(..))
 
 
 view : Html Msg
@@ -15,8 +17,7 @@ view =
             ]
             [ Html.a
                 [ class "navbar-item"
-
-                --, onClick (NavbarClick (ClickedTab LandingPage))
+                , onClick (ClickedTab Gallery)
                 ]
                 [ Html.img
                     [ src "images/logo2.jpg"
@@ -27,8 +28,6 @@ view =
                 ]
             , Html.a
                 [ class "navbar-burger"
-
-                -- , onClick (NavbarClick ClickedHamburgerMenu)
                 ]
                 [ Html.span [] []
                 , Html.span [] []
@@ -43,22 +42,19 @@ view =
                 ]
                 [ Html.a
                     [ class "navbar-item is-tab has-text-danger has-text-weight-bold"
-
-                    -- , onClick (NavbarClick (ClickedTab Artists))
+                    , onClick (ClickedTab Menu)
                     ]
                     [ Html.text "MENU"
                     ]
                 , Html.a
                     [ class "navbar-item is-tab has-text-danger has-text-weight-bold"
-
-                    -- , onClick (NavbarClick (ClickedTab OurStory))
+                    , onClick (ClickedTab Hours)
                     ]
                     [ Html.text "HOURS"
                     ]
                 , Html.a
                     [ class "navbar-item is-tab has-text-danger has-text-weight-bold"
-
-                    -- , onClick (NavbarClick (ClickedTab Shop))
+                    , onClick (ClickedTab Gallery)
                     ]
                     [ Html.text "GALLERY"
                     ]

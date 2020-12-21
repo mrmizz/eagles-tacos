@@ -9,6 +9,7 @@ import Model.State exposing (State(..))
 import Msg.Msg exposing (Msg(..))
 import Sub.Sub as Sub
 import View.Gallery.Gallery
+import View.Menu.Menu
 
 
 main : Program () Model Msg
@@ -36,6 +37,10 @@ update msg model =
         NewWindowSize windowSize ->
             ( { model | windowSize = windowSize }, Cmd.none )
 
+        ClickedTab state ->
+            ( { model | state = state }, Cmd.none )
+
+
 
 
 -- VIEW
@@ -44,5 +49,11 @@ update msg model =
 view : Model -> Html Msg
 view model =
     case model.state of
-        LandingPage ->
+        Menu ->
+            View.Menu.Menu.view
+
+        Hours ->
+            View.Gallery.Gallery.view
+
+        Gallery ->
             View.Gallery.Gallery.view
