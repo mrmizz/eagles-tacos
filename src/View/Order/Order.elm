@@ -25,7 +25,7 @@ body =
             [ class "hero-body has-bg-color2"
             ]
             [ Html.div
-                [ class "container is-fluid has-bg-color1 has-border-all"
+                [ class "container is-fluid has-bg-color1 has-border-all has-padding1"
                 ]
                 [ Html.h1
                     [ class "title is-1 has-text-danger has-text-centered"
