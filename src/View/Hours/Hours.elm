@@ -28,7 +28,7 @@ body =
                 [ class "columns is-multiline"
                 ]
                 [ Html.div
-                    [ class "column is-12 has-border-all"
+                    [ class "column is-12 has-border-all has-padding1"
                     ]
                     [ Html.img
                         [ class "image"
