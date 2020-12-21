@@ -9,6 +9,7 @@ import Model.State exposing (State(..))
 import Msg.Msg exposing (Msg(..))
 import Sub.Sub as Sub
 import View.Gallery.Gallery
+import View.Hours.Hours
 import View.Menu.Menu
 
 
@@ -52,7 +53,7 @@ view model =
             View.Menu.Menu.view
 
         Hours ->
-            View.Gallery.Gallery.view
+            View.Hours.Hours.view
 
         Gallery ->
             View.Gallery.Gallery.view
