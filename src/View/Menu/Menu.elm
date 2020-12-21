@@ -5,6 +5,7 @@ import Html.Attributes exposing (class, src, width)
 import Msg.Msg exposing (Msg)
 import View.Navbar
 
+
 view : Html Msg
 view =
     Html.div
@@ -13,7 +14,8 @@ view =
         , body
         ]
 
-body: Html Msg
+
+body : Html Msg
 body =
     Html.section
         [ class "hero is-fullheight"
