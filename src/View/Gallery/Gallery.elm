@@ -5,6 +5,7 @@ import Html.Attributes exposing (class, src, width)
 import Msg.Msg exposing (Msg)
 import View.Navbar
 
+
 view : Html Msg
 view =
     Html.div
@@ -13,19 +14,20 @@ view =
         , body
         ]
 
+
 body : Html Msg
 body =
     Html.section
         [ class "hero is-fullheight"
         ]
         [ Html.div
-            [ class "hero-body has-bg-color1"
+            [ class "hero-body has-bg-color2"
             ]
             [ Html.div
                 [ class "columns is-multiline"
                 ]
                 [ Html.div
-                    [ class "column is-12"
+                    [ class "column is-12 has-border-all"
                     ]
                     [ Html.img
                         [ class "image"
@@ -35,7 +37,7 @@ body =
                         []
                     ]
                 , Html.div
-                    [ class "column is-12 is-hidden-desktop"
+                    [ class "column is-12 has-border-all is-hidden-desktop"
                     ]
                     [ Html.img
                         [ class "image"
@@ -45,7 +47,7 @@ body =
                         []
                     ]
                 , Html.div
-                    [ class "column is-12 is-hidden-desktop"
+                    [ class "column is-12 has-border-all is-hidden-desktop"
                     ]
                     [ Html.img
                         [ class "image"

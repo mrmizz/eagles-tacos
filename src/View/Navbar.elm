@@ -4,6 +4,7 @@ import Html exposing (Html)
 import Html.Attributes exposing (alt, class, src, width)
 import Msg.Msg exposing (Msg)
 
+
 view : Html Msg
 view =
     Html.nav
@@ -14,6 +15,7 @@ view =
             ]
             [ Html.a
                 [ class "navbar-item"
+
                 --, onClick (NavbarClick (ClickedTab LandingPage))
                 ]
                 [ Html.img
@@ -25,6 +27,7 @@ view =
                 ]
             , Html.a
                 [ class "navbar-burger"
+
                 -- , onClick (NavbarClick ClickedHamburgerMenu)
                 ]
                 [ Html.span [] []
@@ -40,18 +43,21 @@ view =
                 ]
                 [ Html.a
                     [ class "navbar-item is-tab has-text-danger has-text-weight-bold"
+
                     -- , onClick (NavbarClick (ClickedTab Artists))
                     ]
                     [ Html.text "MENU"
                     ]
                 , Html.a
                     [ class "navbar-item is-tab has-text-danger has-text-weight-bold"
+
                     -- , onClick (NavbarClick (ClickedTab OurStory))
                     ]
                     [ Html.text "HOURS"
                     ]
                 , Html.a
                     [ class "navbar-item is-tab has-text-danger has-text-weight-bold"
+
                     -- , onClick (NavbarClick (ClickedTab Shop))
                     ]
                     [ Html.text "GALLERY"
@@ -68,6 +74,7 @@ view =
                         ]
                         [ Html.a
                             [ class "button is-danger"
+
                             -- , onClick (NavbarClick (ClickedTab Cart))
                             ]
                             [ Html.text "Order"
