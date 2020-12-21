@@ -70,8 +70,7 @@ view =
                         ]
                         [ Html.a
                             [ class "button is-danger"
-
-                            -- , onClick (NavbarClick (ClickedTab Cart))
+                            , onClick (ClickedTab Order)
                             ]
                             [ Html.text "Order"
                             ]

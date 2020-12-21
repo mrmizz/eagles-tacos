@@ -5,3 +5,4 @@ type State
     = Menu
     | Hours
     | Gallery
+    | Order

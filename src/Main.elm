@@ -11,6 +11,7 @@ import Sub.Sub as Sub
 import View.Gallery.Gallery
 import View.Hours.Hours
 import View.Menu.Menu
+import View.Order.Order
 
 
 main : Program () Model Msg
@@ -57,3 +58,6 @@ view model =
 
         Gallery ->
             View.Gallery.Gallery.view
+
+        Order ->
+            View.Order.Order.view
